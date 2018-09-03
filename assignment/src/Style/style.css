@@ -1,0 +1,19 @@
+body {
+    background-color: chocolate;
+}
+
+.headerStyle {
+    position: relative !important;
+    text-align: center !important;
+    padding: 1rem;
+    border-bottom: solid 1px;
+}
+
+.menuStyle {
+    padding: 1rem;
+}
+
+.containerStyle {
+    padding: 1rem;
+    color: coral;
+}

@@ -1,6 +1,5 @@
 import React, {Component } from 'react';
 
-
 export default class Header extends Component {
     constructor(props){
         super(props);
@@ -8,7 +7,9 @@ export default class Header extends Component {
     }
     render() {
         return (
-            <div className="row Models-pop mb-3 p-3"><h2 className="header-text">3D Models</h2>
+            <div className='headerStyle'>
+                <h2>{'STAR WARS'}</h2>
+                <h5>{'Find everything here'}</h5>
             </div>
         )
     }

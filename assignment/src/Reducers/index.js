@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import ModelReducers from './reducers_models';
+import ModelReducers from './films.reducer';
 
 const rootReducers = combineReducers({
     models: ModelReducers
