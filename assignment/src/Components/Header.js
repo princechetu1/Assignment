@@ -10,6 +10,7 @@ export default class Header extends Component {
             <div className='headerStyle'>
                 <h2>{'STAR WARS'}</h2>
                 <h5>{'Find everything here'}</h5>
+                <spna>{'Welcome Akash'}</spna>
             </div>
         )
     }

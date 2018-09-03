@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import '../Style/style.css';
 import HeaderBar from '../Components/Header';
-import ContentBar from '../Components/Contentbar';
+import PeopleList from '../Components/PeopleList';
+import PlanetsList from '../Components/PlanetsList';
+import FilmsList from '../Components/FilmsList';
+import VechicleList from '../Components/VechicleList';
+import SpeciesList from '../Components/SpeciesList';
+import StarShipList from '../Components/StarShipList';
 import MenuBar from '../Components/MenuBar';
 
 export default class App extends Component {
@@ -18,7 +23,12 @@ export default class App extends Component {
                         <MenuBar />
                     </div>
                     <div className='col-9'>
-                        <ContentBar />
+                        <PeopleList />
+                        <FilmsList />
+                        <VechicleList />
+                        <SpeciesList />
+                        <StarShipList />
+                        <PlanetsList />
                     </div>
                 </div>
             </div>
