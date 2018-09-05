@@ -34,7 +34,7 @@ class FilmList extends Component {
             <div className='containerStyle'>
             <div className='row'>
                 <div className='col-1'>
-                    <label>{'Search'}</label>
+                    <label><b>{'Search :'}</b></label>
                 </div>
                 <div className='col-11'>
                         <input className='serachInput'
