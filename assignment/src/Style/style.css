@@ -1,6 +1,8 @@
 body {
     background-color: chocolate;
     padding: 1rem;
+    font-family: 'Roboto';
+    font-size: 16px;
 }
 .headerStyle{
     padding: 1rem;
@@ -19,19 +21,66 @@ body {
 
 .menuStyle {
     padding: 1rem;
+    text-align: center;
 }
 
 .containerStyle {
-    padding: 1rem;
+    padding-top: 10px;
     color: coral;
 }
 
 .containerBody {
-    height:28rem;
+    height:29rem;
     overflow-y: scroll;
 }
 
 .menubar .list-group-item,
 .containerStyle .containerBody {
     background-color: khaki;
+}
+
+.menubar .list-group-item{
+    border-radius: 22px;
+    margin-bottom: 4px;
+    cursor: pointer;
+}
+
+.filmCard{
+    padding: 1rem;
+    margin-bottom: 10px;
+    color: black;
+    line-height: 18px;
+    border-bottom: solid 1px;
+}
+
+.filmCard button {
+    margin: 10px;
+    border-radius: 18px;
+    background-color: #d2691e !important;
+    border-color: #d2691e !important;
+}
+
+.filmCard button:hover{
+    background-color: #d2691e !important;
+    border-color: white !important;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: khaki;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+a {
+    color: black !important;
 }

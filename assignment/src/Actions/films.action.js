@@ -1,37 +1,37 @@
 import * as apiServices from '../Helpers/axiosHelper';
 import * as actionTypes from '../Constants/actionType';
-const DEFAULT_URL = `${actionTypes.API_SERVER}/resource/skills`;
+const DEFAULT_URL = `${actionTypes.API_SERVER}/films/`;
 
-export const skillsFetchStart = () => {
+export const filmsFetchStart = () => {
 	return {
-		type: actionTypes.SKILLS_STARTS
+		type: actionTypes.FILMS_STARTS
 	};
 };
 
-export const skillsFetchSuccess = (data) => {
+export const filmsFetchSuccess = (data) => {
 	return {
-		type: actionTypes.SKILLS_SUCCESS,
+		type: actionTypes.FILMS_SUCCESS,
 		payload: data.data
 	};
 };
 
-export const skillsFetchFailure = (msg) => {
+export const filmsFetchFailure = (msg) => {
 	return {
-		type: actionTypes.SKILLS_FAILURE,
+		type: actionTypes.FILMS_FAILURE,
 		payload: msg
 	};
 };
 
-export const fetchSkills = (token) => {
+export const fetchFilms = () => {
 	return (dispatch) => {
-		dispatch(skillsFetchStart());
+        dispatch(filmsFetchStart());
 
-		apiServices.getRequest(token, DEFAULT_URL)
+		apiServices.getRequest(DEFAULT_URL)
 			.then(function (response) {
-				dispatch(skillsFetchSuccess(response));
+				dispatch(filmsFetchSuccess(response));
 			})
 			.catch(function (error) {
-				dispatch(skillsFetchFailure(error));
+				dispatch(filmsFetchFailure(error));
 			});
 	};
 };
