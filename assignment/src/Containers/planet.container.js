@@ -11,7 +11,10 @@ class PlanetsContainer extends Component {
     render() {
         return  (
             <div>
-                <PlanetList planets={this.props.palnets} />
+                <PlanetList planets={this.props.palnets}
+                    scrollFetch={this.props.scrollFetchPlanets}
+                    serachFetch={this.props.searchFetch}
+                    />
             </div>
         );
     }
@@ -25,7 +28,9 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
 	return {
-        fetchPlanets: () => dispatch(Planets.fetchPlanets())
+        fetchPlanets: () => dispatch(Planets.fetchPlanets()),
+        scrollFetchPlanets: (url) => dispatch(Planets.scrollFetchPlanets(url)),
+        searchFetch: (val) => dispatch(Planets.searchFetchPlanets(val))
 	};
 }
 

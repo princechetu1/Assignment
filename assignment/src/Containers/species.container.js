@@ -11,7 +11,10 @@ class SpeciesContainer extends Component {
     render() {
         return  (
             <div>
-                <SpeciesList species={this.props.species} />
+                <SpeciesList species={this.props.species}
+                    scrollFetch={this.props.scrollFetchSpecies}
+                    serachFetch={this.props.searchFetch}
+                />
             </div>
         );
     }
@@ -25,7 +28,9 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
 	return {
-        fetchSpecies: () => dispatch(Species.fetchSpecies())
+        fetchSpecies: () => dispatch(Species.fetchSpecies()),
+        scrollFetchSpecies: (url) => dispatch(Species.scrollFetchSpecies(url)),
+        searchFetch: (val) => dispatch(Species.searchFetchSpecies(val))
 	};
 }
 

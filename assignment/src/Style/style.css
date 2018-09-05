@@ -30,13 +30,14 @@ body {
 }
 
 .containerBody {
-    height:29rem;
+    height:28rem;
     overflow-y: scroll;
 }
 
 .menubar .list-group-item,
 .containerStyle .containerBody {
     background-color: khaki;
+    border-radius: 10px;
 }
 
 .menubar .list-group-item{
@@ -83,4 +84,12 @@ body {
 
 a {
     color: black !important;
+}
+
+
+.serachInput {
+    width: 100%;
+    border: none;
+    background-color: #f0e68cb3;
+    border-radius: 8px;
 }

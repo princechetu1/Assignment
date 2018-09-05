@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import PeopleList from '../Containers/people.container';
 import PlanetsContainer from '../Containers/planet.container';
 import FilmsContainer from '../Containers/films.container';
@@ -17,6 +17,7 @@ class ContentBlock extends Component {
                         <Route path='/species' component={SpeciesContainer} />
                         <Route path='/starships' component={StarshipContainer} />
                         <Route path='/vechicles' component={VechicleContainer} />
+                        <Redirect exact={true} from='/' to='/people' />
                     </Switch>
         )
     }

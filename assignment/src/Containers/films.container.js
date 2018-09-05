@@ -11,7 +11,9 @@ class FilmsContainer extends Component {
     render() {
         return  (
             <div>
-                <FilmsList films={this.props.films} />
+                <FilmsList films={this.props.films}
+                    scrollFetch={this.props.scrollFetchFilms}
+                    serachFetch={this.props.searchFetch} />
             </div>
         );
     }
@@ -25,7 +27,9 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
 	return {
-        fetchFilms: () => dispatch(Films.fetchFilms())
+        fetchFilms: () => dispatch(Films.fetchFilms()),
+        scrollFetchFilms: (url) => dispatch(Films.scrollFetchFilms(url)),
+        searchFetch: (val) => dispatch(Films.searchFetchFilms(val)),
 	};
 }
 

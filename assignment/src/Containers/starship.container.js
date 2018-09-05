@@ -11,7 +11,10 @@ class StarshipContainer extends Component {
     render() {
         return  (
             <div>
-                <StarShipList starships={this.props.starships} />
+                <StarShipList starships={this.props.starships}
+                    scrollFetch={this.props.scrollFetchStarships}
+                    serachFetch={this.props.searchFetch}
+                    />
             </div>
         );
     }
@@ -25,7 +28,9 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
 	return {
-        fetchStarships: () => dispatch(StarShips.fetchStarships())
+        fetchStarships: () => dispatch(StarShips.fetchStarships()),
+        scrollFetchStarships: (url) => dispatch(StarShips.scrollFetchStarships(url)),
+        searchFetch: (val) => dispatch(StarShips.searchFetchStarships(val))
 	};
 }
 

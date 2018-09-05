@@ -11,7 +11,10 @@ class VechicleContainer extends Component {
     render() {
         return  (
             <div>
-                <VechicleList vechicles={this.props.vechicles} />
+                <VechicleList vechicles={this.props.vechicles}
+                    scrollFetch={this.props.scrollFetchVechicles}
+                    serachFetch={this.props.searchFetch}
+                />
             </div>
         );
     }
@@ -25,7 +28,9 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
 	return {
-        fetchVechicles: () => dispatch(Vechicles.fetchVechicles())
+        fetchVechicles: () => dispatch(Vechicles.fetchVechicles()),
+        scrollFetchVechicles: (url) => dispatch(Vechicles.scrollFetchVechicles(url)),
+        searchFetch: (val) => dispatch(Vechicles.searchFetchVechicles(val))
 	};
 }
 

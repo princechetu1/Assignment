@@ -11,7 +11,10 @@ class PeoplesContainer extends Component {
     render() {
         return  (
             <div>
-                <PeopleList peoples={this.props.people} />
+                <PeopleList peoples={this.props.people}
+                    scrollFetch={this.props.scrollFetchPeoples}
+                    serachFetch={this.props.searchFetch}
+                />
             </div>
         );
     }
@@ -25,7 +28,9 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
 	return {
-        fetchPeople: () => dispatch(People.fetchPeoples())
+        fetchPeople: () => dispatch(People.fetchPeoples()),
+        scrollFetchPeoples: (url) => dispatch(People.scrollFetchPeoples(url)),
+        searchFetch: (val) => dispatch(People.searchFetchPeoples(val))
 	};
 }
 

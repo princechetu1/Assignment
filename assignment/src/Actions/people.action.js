@@ -15,6 +15,13 @@ export const peoplesFetchSuccess = (data) => {
 	};
 };
 
+export const peoplesScrollFetchSuccess = (data) => {
+	return {
+		type: actionTypes.PEOPLES_NEXT_SUCCESS,
+		payload: data.data
+	};
+};
+
 export const peoplesFetchFailure = (msg) => {
 	return {
 		type: actionTypes.PEOPLES_FAILURE,
@@ -27,6 +34,35 @@ export const fetchPeoples = () => {
 		dispatch(peoplesFetchStart());
 
 		apiServices.getRequest(DEFAULT_URL)
+			.then(function (response) {
+				dispatch(peoplesFetchSuccess(response));
+			})
+			.catch(function (error) {
+				dispatch(peoplesFetchFailure(error));
+			});
+	};
+};
+
+
+export const scrollFetchPeoples = (url) => {
+	return (dispatch) => {
+		dispatch(peoplesFetchStart());
+
+		apiServices.getRequest(url)
+			.then(function (response) {
+				dispatch(peoplesScrollFetchSuccess(response));
+			})
+			.catch(function (error) {
+				dispatch(peoplesFetchFailure(error));
+			});
+	};
+};
+
+export const searchFetchPeoples = (val) => {
+	return (dispatch) => {
+		dispatch(peoplesFetchStart());
+        const url = `${DEFAULT_URL}?search=${val}`;
+		apiServices.getRequest(url)
 			.then(function (response) {
 				dispatch(peoplesFetchSuccess(response));
 			})
