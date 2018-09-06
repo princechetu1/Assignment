@@ -29,7 +29,7 @@ function mapDispatchToProps(dispatch) {
 	return {
         fetchFilms: () => dispatch(Films.fetchFilms()),
         scrollFetchFilms: (url) => dispatch(Films.scrollFetchFilms(url)),
-        searchFetch: (val) => dispatch(Films.searchFetchFilms(val)),
+        searchFetch: (val) => dispatch(Films.searchFetchFilms(val))
 	};
 }
 

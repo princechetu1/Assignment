@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
+import FilmModal from './Modals/filmModal';
 class PeopleList extends Component {
     constructor(props){
         super(props);
         this.state = {
-            serachInput:''
+            serachInput:'',
+            showFilmModal:false
         };
     }
 
@@ -24,6 +26,19 @@ class PeopleList extends Component {
             return;
         }
         this.props.serachFetch(term);
+    }
+
+    onFlimsClick(e) {
+        const index = e.target.getAttribute('custom');
+        const urls = this.props.peoples.data[index].films;
+        if(urls){
+            this.props.clickFetchFilms(urls);
+        }
+        this.setState({showFilmModal:true});
+    }
+
+    closeModal() {
+        this.setState({showFilmModal:false});
     }
 
     render() {
@@ -92,13 +107,17 @@ class PeopleList extends Component {
                             </div>
                             <div className='col-10'>{c.eye_color}</div>
                         </div>
-                        <button className='btn btn-primary'>{'Films'}</button>
+                        <button custom={k} onClick={this.onFlimsClick.bind(this)} className='btn btn-primary'>{'Films'}</button>
                         <button className='btn btn-primary'>{'StarShips'}</button>
                         <button className='btn btn-primary'>{'Species'}</button>
                         <button className='btn btn-primary'>{'vehicles'}</button>
                     </div>
                     )}
             </div>
+                <FilmModal show={this.state.showFilmModal}
+                        films={this.props.contextFilms}
+                        closeModal={this.closeModal.bind(this)}
+                />
             </div>
         )
     }

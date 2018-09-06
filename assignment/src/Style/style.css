@@ -92,3 +92,12 @@ a {
     background-color: #f0e68cb3;
     border-radius: 8px;
 }
+
+.filmModalClass .modal-content {
+    background-color: #f0e68cb3;
+    width: 144%;
+}
+
+.modal-footer button {
+    background: #d2691e !important;
+}

@@ -5,6 +5,7 @@ import Planets from './planets.reducer';
 import Species from './species.reducer';
 import Starships from './startship.reducer';
 import Vechicles from './vechicle.reducer';
+import ContextFilms from './contextFilms.reducer';
 
 const rootReducers = combineReducers({
     films: Films,
@@ -12,7 +13,8 @@ const rootReducers = combineReducers({
     planets: Planets,
     species: Species,
     starships: Starships,
-    vechicles: Vechicles
+    vechicles: Vechicles,
+    contextFilms: ContextFilms
 });
 
 export default rootReducers;
